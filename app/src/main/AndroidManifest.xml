@@ -15,6 +15,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".startActivity"
+            android:label="@string/title_activity_start"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".howToActivity"
+            android:label="@string/title_activity_how_to"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".recordActivity"
+            android:label="@string/title_activity_record"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".configActivity"
+            android:label="@string/title_activity_config"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
