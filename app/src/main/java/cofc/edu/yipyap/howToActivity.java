@@ -16,12 +16,15 @@ Back Button     back
 Start Button    htStart
     */
 
-    Button startButton = (Button) findViewById(R.id.htStart);
-    Button backButton = (Button) findViewById(R.id.back);
+    Button startButton;
+    Button backButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        startButton = (Button) findViewById(R.id.htStart);
+        backButton = (Button) findViewById(R.id.back);
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override

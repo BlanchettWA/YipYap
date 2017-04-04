@@ -15,12 +15,14 @@ public class recordActivity extends AppCompatActivity {
 Back Button back2
     * */
 
-    Button backButton = (Button) findViewById(R.id.back2);
+    Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
+
+        backButton = (Button) findViewById(R.id.back2);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

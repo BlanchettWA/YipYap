@@ -18,15 +18,18 @@ how to play button:     howto
 records button:         records
 */
 
+    Button startButton;
+    Button howToButton;
+    Button recordsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        Button startButton = (Button) findViewById(R.id.start);
-        Button howToButton = (Button) findViewById(R.id.howto);
-        Button recordsButton = (Button) findViewById(R.id.records);
+        startButton = (Button) findViewById(R.id.start);
+        howToButton = (Button) findViewById(R.id.howto);
+        recordsButton = (Button) findViewById(R.id.records);
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
