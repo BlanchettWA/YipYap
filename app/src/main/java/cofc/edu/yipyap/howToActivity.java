@@ -22,6 +22,7 @@ Start Button    htStart
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_how_to);
 
         startButton = (Button) findViewById(R.id.htStart);
         backButton = (Button) findViewById(R.id.back);
@@ -29,13 +30,13 @@ Start Button    htStart
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(howToActivity.this, MainActivity.class));
+                howToActivity.this.startActivity(new Intent(howToActivity.this, MainActivity.class));
             }
         });
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(howToActivity.this, startActivity.class));
+                howToActivity.this.startActivity(new Intent(howToActivity.this, startActivity.class));
             }
         });
     }

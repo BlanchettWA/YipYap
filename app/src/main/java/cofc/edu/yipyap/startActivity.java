@@ -34,21 +34,21 @@ records button:         records
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(startActivity.this, MainActivity.class));
+                startActivity.this.startActivity(new Intent(startActivity.this, configActivity.class));
             }
         });
 
         howToButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(startActivity.this, howToActivity.class));
+                startActivity.this.startActivity(new Intent(startActivity.this, howToActivity.class));
             }
         });
 
         recordsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(startActivity.this, recordActivity.class));
+                startActivity.this.startActivity(new Intent(startActivity.this, recordActivity.class));
             }
         });
     }
