@@ -26,6 +26,7 @@
         android:id="@+id/instructions"
         android:layout_below="@id/HTP"
         android:layout_margin="6pt"
+        android:textSize="18pt"
         />
 
     <Button
