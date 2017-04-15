@@ -6,6 +6,11 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+
+import java.util.ArrayList;
 
 public class configActivity extends AppCompatActivity {
 
@@ -23,14 +28,42 @@ public class configActivity extends AppCompatActivity {
 
      */
 
-    String[] randomTopicList = {"Sports","Technology","Weather","Art","People"};
+    ArrayList<String> randomTopicList;
+    ArrayAdapter<String> topicAdapter;
+
+    ArrayList<String> playerList;
+    ArrayAdapter<String> playerAdapter;
+
+    EditText topicEntry;
+    Button randomTopic;
+
+
+
     int numPlayers = 0;
     int numTurns = 5;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config);
-            }
+
+        randomTopicList = new ArrayList<>(6);
+        playerList = new ArrayList<>(4);
+        topicPopulate();
+
+
+
+
+    }
+
+    public void topicPopulate(){
+        randomTopicList.add("Sports");
+        randomTopicList.add("Technology");
+        randomTopicList.add("News");
+        randomTopicList.add("Memes");
+        randomTopicList.add("Gaming");
+    }
 
 }
