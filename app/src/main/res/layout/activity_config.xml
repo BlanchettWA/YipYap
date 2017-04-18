@@ -22,7 +22,7 @@
 
             <EditText
                 android:id="@+id/gameTopicBox"
-                android:layout_width="wrap_content"
+                android:layout_width="197dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Enter a Game Topic!"
@@ -35,6 +35,13 @@
                 android:layout_column="0"
                 android:layout_row="1"
                 android:text="Random" />
+
+            <Button
+                android:id="@+id/fromListButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="List" />
         </LinearLayout>
 
         <LinearLayout
@@ -60,12 +67,14 @@
                 android:textAlignment="center" />
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/listPlayers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listPlayers"
+        android:scrollbars="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"/>
 
-        <TextView
+    <TextView
             android:id="@+id/peopleManagementHint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
