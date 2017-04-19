@@ -50,6 +50,14 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/numplayersbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="00"
+                android:textSize="18sp" />
+
+            <TextView
                 android:id="@+id/numPlayersLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,20 +75,20 @@
                 android:textAlignment="center" />
         </LinearLayout>
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listPlayers"
-        android:scrollbars="vertical"
-        android:scrollbarAlwaysDrawVerticalTrack="true"/>
-
     <TextView
             android:id="@+id/peopleManagementHint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tap a person to change their name, hold on them to remove them" />
 
-        <LinearLayout
+    <ListView
+        android:id="@+id/listPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">

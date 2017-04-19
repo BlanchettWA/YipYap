@@ -1,6 +1,7 @@
 package cofc.edu.yipyap;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -57,6 +59,7 @@ public class configActivity extends AppCompatActivity {
     Button fromListButton;
     boolean fRun = true;
     Random rando = new Random();
+    TextView numPB;
 
     int numPlayers = 0;
     int numTurns = 5;
@@ -76,8 +79,10 @@ public class configActivity extends AppCompatActivity {
         startGame = (Button) findViewById(R.id.startGameButton);
         turnsBox = (EditText) findViewById(R.id.numTurnsBox);
         fromListButton = (Button) findViewById(R.id.fromListButton);
+        numPB = (TextView) findViewById(R.id.numplayersbox);
 
 
+        numPB.setText(Integer.toString(numPlayers));
 
         if (fRun){
             randomTopicList = new ArrayList<>(6);
@@ -113,6 +118,7 @@ public class configActivity extends AppCompatActivity {
                 numPlayers -= 1;
                 playerAdapter.notifyDataSetChanged();
                 Toast.makeText(getApplicationContext(), oldName + " has been removed", Toast.LENGTH_SHORT).show();
+                numPB.setText(Integer.toString(numPlayers));
                 return false;
             }
         });
@@ -122,6 +128,7 @@ public class configActivity extends AppCompatActivity {
             public void onClick(View v) {
                 numPlayers += 1;
                 playerList.add("Player " + Integer.toString(numPlayers));
+                numPB.setText(Integer.toString(numPlayers));
                 playerAdapter.notifyDataSetChanged();
                 Toast.makeText(getApplicationContext(), "Player added", Toast.LENGTH_SHORT).show();
             }
@@ -173,6 +180,20 @@ public class configActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 getTopicfromList();
+            }
+        });
+
+        backMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                configActivity.this.startActivity(new Intent(configActivity.this, startActivity.class));
+            }
+        });
+
+        startGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                configActivity.this.startActivity(new Intent(configActivity.this, MainActivity.class));
             }
         });
 
@@ -234,6 +255,7 @@ public class configActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 tbR = randomTopicList.get(position).toString();
+                topicEntry.setText(tbR);
 
             }
         });
@@ -268,6 +290,7 @@ public class configActivity extends AppCompatActivity {
         playerAdapter.notifyDataSetChanged();
 
         numPlayers = playerList.size();
+        numPB.setText(Integer.toString(numPlayers));
         tbR = savedInstanceState.getString("curtopic");
         numTurns = savedInstanceState.getInt("numturn");
         fRun = savedInstanceState.getBoolean("firstRun");
@@ -287,6 +310,9 @@ public class configActivity extends AppCompatActivity {
         outState.putString("curtopic",tbR);
         outState.putInt("numturn",numTurns);
         outState.putBoolean("firstRun",fRun);
-
     }
+
+
+
+
 }

@@ -30,7 +30,7 @@ Start Button    htStart
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                howToActivity.this.startActivity(new Intent(howToActivity.this, MainActivity.class));
+                howToActivity.this.startActivity(new Intent(howToActivity.this, configActivity.class));
             }
         });
         backButton.setOnClickListener(new View.OnClickListener() {

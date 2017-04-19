@@ -20,14 +20,13 @@
         />
 
     <TextView
+        android:id="@+id/instructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/instructions"
-        android:id="@+id/instructions"
         android:layout_below="@id/HTP"
         android:layout_margin="6pt"
-        android:textSize="18pt"
-        />
+        android:text="@string/instructions"
+        android:textSize="23sp" />
 
     <Button
         android:layout_width="wrap_content"
