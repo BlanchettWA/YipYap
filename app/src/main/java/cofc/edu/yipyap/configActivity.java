@@ -193,7 +193,11 @@ public class configActivity extends AppCompatActivity {
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                configActivity.this.startActivity(new Intent(configActivity.this, MainActivity.class));
+                Intent toGame = new Intent(configActivity.this, MainActivity.class);
+                toGame.putExtra("NumTurns",numTurns);
+                toGame.putExtra("PlayerList",playerList);
+                toGame.putExtra("Topic",tbR);
+                configActivity.this.startActivity(toGame);
             }
         });
 
