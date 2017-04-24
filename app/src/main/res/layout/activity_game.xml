@@ -10,7 +10,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="14dp"
         android:layout_marginTop="15dp"
-        android:id="@+id/topic"
+        android:id="@+id/topicBox"
         android:textSize="18sp"
         android:textStyle="normal|bold" />
 
@@ -18,25 +18,12 @@
         android:text="Player's Turn:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/topic"
-        android:layout_alignStart="@+id/topic"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="12dp"
         android:id="@+id/playerTurn"
         android:textSize="18sp"
-        android:textStyle="normal|bold" />
-
-    <Chronometer
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="38dp"
-        android:id="@+id/timeLeft"
-        android:text="Time Left"
         android:textStyle="normal|bold"
-        android:format="00:00"
-        android:textSize="18sp"
-        android:layout_above="@+id/playerTurn"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/topic" />
+        android:layout_below="@+id/topicBox"
+        android:layout_alignStart="@+id/topicBox" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -68,5 +55,24 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="20dp"
         android:id="@+id/done" />
+
+    <TextView
+        android:id="@+id/roundsLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/enterWords"
+        android:layout_alignEnd="@+id/wordsPosted"
+        android:layout_alignTop="@+id/topicBox"
+        android:layout_toEndOf="@+id/enterWords"
+        android:text="Rounds Left:" />
+
+    <TextView
+        android:id="@+id/wordsPosted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/home"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/enterWords"
+        android:layout_below="@+id/enterWords" />
 
 </RelativeLayout>
