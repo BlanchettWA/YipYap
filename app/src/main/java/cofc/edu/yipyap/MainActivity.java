@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     Button done;
     TextView wordsPosted;
     TextView roundsLeft;
+    TextView wordHistory;
 
 
     int roundCount = 1;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         done = (Button) findViewById(R.id.done);
         wordsPosted = (EditText) findViewById(R.id.wordsPosted);
         roundsLeft = (TextView) findViewById(R.id.roundsLeft);
+        wordHistory = (TextView) findViewById(R.id.wordHistory);
 
 
         // retrieving bundle from configActivity
@@ -67,26 +69,37 @@ public class MainActivity extends AppCompatActivity {
 
         wordsPosted.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
+            {
                 boolean handled = false;
-                if (roundCount == 0) {
-                    Toast.makeText(getApplicationContext(), "The jig is up! Click 'Done' to see your full story.", Toast.LENGTH_SHORT).show();
-                } else {
-                    String word = wordsPosted.getText().toString();
-                    if (word.length() > 0) {
-                        words.add(word.toString());
-                        playerNum++;
-                        if (playerNum < playerList.size()) {
-                            playerTurn.setText("Player's Turn: " + playerList.get(playerNum));
-                        } else {
-                            playerNum = 0;
-                            playerTurn.setText("Player's Turn: " + playerList.get(playerNum));
-                            roundCount--;
-                            roundsLeft.setText("Rounds Left: " + roundCount);
+                //Out of turns; don't accept any more input
+                if (roundCount == 0) {Toast.makeText(getApplicationContext(), "The jig is up! Click 'Done' to see your full story.", Toast.LENGTH_SHORT).show();}
+
+                //Accept input and let the game play
+                else
+                    {
+                        String word = wordsPosted.getText().toString(); //Grab input from the user
+
+                        //Only continue if the input is valid.
+                        if (word.length() > 0)
+                        {
+                            words.add(word.toString()); //Add the word to the array list
+                            playerNum++;  //Go to the next player
+                            String oldHis = wordHistory.getText().toString();
+                            wordHistory.setText(oldHis + " " + word);
+
+                            if (playerNum < playerList.size()) {playerTurn.setText("Player's Turn: " + playerList.get(playerNum));}
+                            else {
+                                playerNum = 0;
+                                playerTurn.setText("Player's Turn: " + playerList.get(playerNum));
+                                roundCount--;
+                                roundsLeft.setText("Rounds Left: " + roundCount);
+                                oldHis = wordHistory.getText().toString();
+                                wordHistory.setText(oldHis + " | ");
+                                }
+                            wordsPosted.setText("");
                         }
-                        wordsPosted.setText("");
                     }
-                }
                 return handled;
             }
         });

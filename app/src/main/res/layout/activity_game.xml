@@ -73,4 +73,12 @@
         android:inputType="textPersonName"
         android:imeOptions="actionNext"/>
 
+    <TextView
+        android:id="@+id/wordHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/wordsPosted"
+        android:layout_below="@+id/wordsPosted"
+        android:layout_marginTop="42dp" />
+
 </RelativeLayout>
