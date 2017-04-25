@@ -25,24 +25,12 @@
         android:layout_below="@+id/topicBox"
         android:layout_alignStart="@+id/topicBox" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:layout_below="@+id/playerTurn"
-        android:layout_alignStart="@+id/playerTurn"
-        android:layout_marginTop="22dp"
-        android:id="@+id/enterWords"
-        android:text="Enter Words Here:"
-        android:textStyle="normal|bold" />
-
     <Button
         android:text="Home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/enterWords"
+        android:layout_alignStart="@+id/enterWordsText"
         android:layout_marginBottom="13dp"
         android:id="@+id/home" />
 
@@ -59,19 +47,30 @@
         android:id="@+id/roundsLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/enterWords"
-        android:layout_alignEnd="@+id/wordsPosted"
+        android:text="Rounds Left:"
         android:layout_alignTop="@+id/topicBox"
-        android:layout_toEndOf="@+id/enterWords"
-        android:text="Rounds Left:" />
+        android:layout_alignEnd="@+id/done"
+        android:layout_marginEnd="20dp" />
 
     <TextView
+        android:id="@+id/enterWordsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/playerTurn"
+        android:layout_below="@+id/playerTurn"
+        android:layout_marginTop="16dp"
+        android:text="Enter Words Here:"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
         android:id="@+id/wordsPosted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/home"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/enterWords"
-        android:layout_below="@+id/enterWords" />
+        android:layout_alignStart="@+id/enterWordsText"
+        android:layout_below="@+id/enterWordsText"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:imeOptions="actionNext"/>
 
 </RelativeLayout>
