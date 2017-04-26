@@ -113,12 +113,21 @@ public class MainActivity extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (!(roundCount == 0))
+                {
+                    Toast.makeText(getApplicationContext(), "The game's not over yet! Look at your friends and get creative!", Toast.LENGTH_SHORT).show();
+                }
+
+                else
+                {
                 Intent toResult = new Intent(MainActivity.this, rankingActivity.class);
                 toResult.putExtra("NumRounds", roundCount);
                 toResult.putExtra("PlayerList",playerList);
                 toResult.putExtra("Topic", gameTopic);
                 toResult.putExtra("WordStory",words);
                 MainActivity.this.startActivity(toResult);
+            }
             }
         });
 

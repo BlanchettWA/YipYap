@@ -39,5 +39,23 @@ public class rankingActivity extends AppCompatActivity {
         ArrayAdapter<String> toList = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,wordsPlayed);
         wordPlay.setAdapter(toList);
         toList.notifyDataSetChanged();
+
+
+        fScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tofinal = new Intent(rankingActivity.this, finalScreen.class);
+                rankingActivity.this.startActivity(tofinal);
+            }
+        });
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rankingActivity.this.startActivity(new Intent(rankingActivity.this, startActivity.class));
+            }
+        });
+
+
     }
 }

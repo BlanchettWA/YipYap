@@ -197,7 +197,7 @@ public class configActivity extends AppCompatActivity {
             {
                 if (numPlayers > 0)
                 {
-                    if (tbR.length() < 0){tbR = "Random";}
+                    if ((tbR == null) || (tbR.length() < 0)){tbR = "Random";}
                     Intent toGame = new Intent(configActivity.this, MainActivity.class);
                     toGame.putExtra("NumTurns", numTurns);
                     toGame.putExtra("PlayerList", playerList);
