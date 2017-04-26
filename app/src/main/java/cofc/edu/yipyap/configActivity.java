@@ -33,8 +33,8 @@ public class configActivity extends AppCompatActivity {
     randomTopicButton - random selects from a list.
     addPlayerButton - Button to put a person in the list
     listPlayers - ListView that displays players in the game
-    numTurnsBox - Entrybox for the number of teurns
-    mainMenuButton - button to return to main menu
+    numTurnsBox - Entry box for the number of turns
+    mainMenuButton - Button to return to main menu
     startGameButton - Button to start the game
 
 
@@ -190,21 +190,32 @@ public class configActivity extends AppCompatActivity {
             }
         });
 
-        startGame.setOnClickListener(new View.OnClickListener() {
+        startGame.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                Intent toGame = new Intent(configActivity.this, MainActivity.class);
-                toGame.putExtra("NumTurns",numTurns);
-                toGame.putExtra("PlayerList",playerList);
-                toGame.putExtra("Topic",tbR);
-                configActivity.this.startActivity(toGame);
+            public void onClick(View v)
+            {
+                if (numPlayers > 0)
+                {
+                    if ((tbR == null) || (tbR.length() < 0)){tbR = "Random";}
+                    Intent toGame = new Intent(configActivity.this, MainActivity.class);
+                    toGame.putExtra("NumTurns", numTurns);
+                    toGame.putExtra("PlayerList", playerList);
+                    toGame.putExtra("Topic", tbR);
+                    configActivity.this.startActivity(toGame);
+                }
+                else
+                {
+                    if (numPlayers < 0){Toast.makeText(getApplicationContext(), "Must have players for a game!", Toast.LENGTH_SHORT).show();}
+                }
             }
         });
 
     }
 
     //Function to populate topic list
-    public void topicPopulate(){
+    public void topicPopulate()
+    {
         randomTopicList.add("Sports");
         randomTopicList.add("Technology");
         randomTopicList.add("News");
@@ -281,40 +292,6 @@ public class configActivity extends AppCompatActivity {
 
     }
 
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-
-        randomTopicList =  savedInstanceState.getStringArrayList("topiclist");
-
-        playerList = savedInstanceState.getStringArrayList("playerlist");
-        playerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,playerList);
-        playerListView.setAdapter(playerAdapter);
-        playerAdapter.notifyDataSetChanged();
-
-        numPlayers = playerList.size();
-        numPB.setText(Integer.toString(numPlayers));
-        tbR = savedInstanceState.getString("curtopic");
-        numTurns = savedInstanceState.getInt("numturn");
-        fRun = savedInstanceState.getBoolean("firstRun");
-        topicEntry.setText(tbR);
-        turnsBox.setText(Integer.toString(numTurns));
-
-
-
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        outState.putStringArrayList("topiclist", randomTopicList);
-        outState.putStringArrayList("playerlist",playerList);
-        outState.putString("curtopic",tbR);
-        outState.putInt("numturn",numTurns);
-        outState.putBoolean("firstRun",fRun);
-    }
 
 
 

@@ -23,15 +23,15 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="All words that were used are shown here: click the words that you like!"
+        android:id="@+id/wordsPlaydescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/wordsPlayed"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="100dp"
         android:fontFamily="sans-serif"
-        android:textSize="24sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:text="All words that were used are shown here: tap the words that you like!"
+        android:textSize="24sp" />
 
     <TextView
         android:text="Rate The Words!"
@@ -43,5 +43,14 @@
         android:id="@+id/rating"
         android:textSize="36sp"
         android:textStyle="normal|bold" />
+
+    <ListView
+        android:id="@+id/wordsPlayed"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:scrollbars="vertical"
+        android:layout_above="@+id/home"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="41dp" />
 
 </RelativeLayout>

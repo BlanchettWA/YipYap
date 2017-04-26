@@ -35,7 +35,26 @@
             android:screenOrientation="portrait"
             android:name=".configActivity"
             android:label="@string/title_activity_config"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".rankingActivity"
+            android:label="rankingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".finalScreen"
+            android:label="FinalScreen"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="Game Screen"/>
+
     </application>
 
 </manifest>
