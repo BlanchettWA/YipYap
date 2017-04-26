@@ -190,21 +190,32 @@ public class configActivity extends AppCompatActivity {
             }
         });
 
-        startGame.setOnClickListener(new View.OnClickListener() {
+        startGame.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                Intent toGame = new Intent(configActivity.this, MainActivity.class);
-                toGame.putExtra("NumTurns",numTurns);
-                toGame.putExtra("PlayerList",playerList);
-                toGame.putExtra("Topic",tbR);
-                configActivity.this.startActivity(toGame);
+            public void onClick(View v)
+            {
+                if (numPlayers > 0)
+                {
+                    if (tbR.length() < 0){tbR = "Random";}
+                    Intent toGame = new Intent(configActivity.this, MainActivity.class);
+                    toGame.putExtra("NumTurns", numTurns);
+                    toGame.putExtra("PlayerList", playerList);
+                    toGame.putExtra("Topic", tbR);
+                    configActivity.this.startActivity(toGame);
+                }
+                else
+                {
+                    if (numPlayers < 0){Toast.makeText(getApplicationContext(), "Must have players for a game!", Toast.LENGTH_SHORT).show();}
+                }
             }
         });
 
     }
 
     //Function to populate topic list
-    public void topicPopulate(){
+    public void topicPopulate()
+    {
         randomTopicList.add("Sports");
         randomTopicList.add("Technology");
         randomTopicList.add("News");

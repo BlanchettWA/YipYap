@@ -95,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
                                 roundCount--;
                                 roundsLeft.setText("Rounds Left: " + roundCount);
                                 oldHis = wordHistory.getText().toString();
-                                wordHistory.setText(oldHis + " | ");
                                 }
                             wordsPosted.setText("");
                         }
@@ -114,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toResult = new Intent(MainActivity.this, recordActivity.class);
+                Intent toResult = new Intent(MainActivity.this, rankingActivity.class);
                 toResult.putExtra("NumRounds", roundCount);
                 toResult.putExtra("PlayerList",playerList);
                 toResult.putExtra("Topic", gameTopic);
