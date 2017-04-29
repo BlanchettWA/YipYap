@@ -21,6 +21,8 @@ public class rankingActivity extends AppCompatActivity {
     Button fScreen;
     ListView wordPlay;
     ArrayList<String> wordsPlayed;
+    int[] likeList;
+    ArrayList<String> players;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -34,6 +36,12 @@ public class rankingActivity extends AppCompatActivity {
 
         Intent previousData = getIntent();
         wordsPlayed = previousData.getStringArrayListExtra("WordStory");
+        players = previousData.getStringArrayListExtra("PlayerList");
+
+        //Create and initialize array for tracking the likes.
+        likeList = new int[wordsPlayed.size()];
+        for (int i = 0; i < wordsPlayed.size(); i++){likeList[i] = 0;}
+
 
 
         ArrayAdapter<String> toList = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,wordsPlayed);

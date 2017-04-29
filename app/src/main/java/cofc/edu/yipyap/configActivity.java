@@ -24,6 +24,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static android.graphics.Color.rgb;
+
 public class configActivity extends AppCompatActivity {
 
     /*
@@ -231,6 +233,7 @@ public class configActivity extends AppCompatActivity {
         renamePopup.setTitle("Rename " + currentName);
 
         final EditText renameBox = new EditText(getApplicationContext());
+        renameBox.setTextColor(rgb(0,0,0));
         renameBox.setInputType(InputType.TYPE_CLASS_TEXT);
         renamePopup.setView(renameBox);
 

@@ -17,23 +17,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_start"
-            android:theme="@style/AppTheme.NoActionBar" />-->
+
         <activity
             android:screenOrientation="portrait"
             android:name=".howToActivity"
+            android:windowSoftInputMode="adjustResize"
             android:label="@string/title_activity_how_to"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:screenOrientation="portrait"
             android:name=".recordActivity"
             android:label="@string/title_activity_record"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:screenOrientation="portrait"
             android:name=".configActivity"
+            android:windowSoftInputMode="adjustPan"
             android:label="@string/title_activity_config"
             android:theme="@style/AppTheme.NoActionBar"/>
 
@@ -47,11 +47,13 @@
         <activity
             android:screenOrientation="portrait"
             android:name=".finalScreen"
+            android:windowSoftInputMode="adjustResize"
             android:label="FinalScreen"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="Game Screen"/>
 

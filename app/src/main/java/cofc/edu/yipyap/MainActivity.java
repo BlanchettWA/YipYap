@@ -2,6 +2,8 @@ package cofc.edu.yipyap;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
@@ -66,6 +68,21 @@ public class MainActivity extends AppCompatActivity {
         topic.setText("Topic: " + gameTopic);
         roundsLeft.setText("Rounds Left: " + roundCount);
         playerTurn.setText("Player's Turn: " + playerList.get(playerNum));
+
+        /* To restrict Space Bar in Keyboard */
+        InputFilter filter = new InputFilter() {
+            public CharSequence filter(CharSequence source, int start, int end,
+                                       Spanned dest, int dstart, int dend) {
+                for (int i = start; i < end; i++) {
+                    if (Character.isWhitespace(source.charAt(i))) {
+                        return "";
+                    }
+                }
+                return null;
+            }
+
+        };
+        wordsPosted.setFilters(new InputFilter[] { filter });
 
         wordsPosted.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
