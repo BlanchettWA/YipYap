@@ -81,4 +81,21 @@
         android:layout_below="@+id/wordsPosted"
         android:layout_marginTop="42dp" />
 
+    <ProgressBar
+        android:id="@+id/gameProgress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/roundsLeft"
+        android:layout_alignTop="@+id/enterWordsText"
+        android:layout_toEndOf="@+id/wordsPosted" />
+
+    <TextView
+        android:id="@+id/wordsLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/roundsLeft"
+        android:layout_alignTop="@+id/playerTurn"
+        android:text="Words Left: " />
+
 </RelativeLayout>

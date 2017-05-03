@@ -7,6 +7,7 @@ import android.text.Spanned;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.Toast;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     TextView wordsPosted;
     TextView roundsLeft;
     TextView wordHistory;
+    TextView wordsLeft;
+    ProgressBar gameLength;
 
 
     int roundCount = 1;
@@ -56,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
         wordsPosted = (EditText) findViewById(R.id.wordsPosted);
         roundsLeft = (TextView) findViewById(R.id.roundsLeft);
         wordHistory = (TextView) findViewById(R.id.wordHistory);
-
+        wordsLeft = (TextView) findViewById(R.id.wordsLeft);
+        gameLength = (ProgressBar) findViewById(R.id.gameProgress);
 
         // retrieving bundle from configActivity
 
@@ -67,8 +71,12 @@ public class MainActivity extends AppCompatActivity {
         totalWords = (roundCount*(playerList.size()));
         final String gameTopic = extras.getStringExtra("Topic");
 
+
+        gameLength.setMax(totalWords);
+        gameLength.setProgress(0);
         topic.setText("Topic: " + gameTopic);
         roundsLeft.setText("Rounds Left: " + roundCount);
+        wordsLeft.setText("Words Left: " + totalWords);
         playerTurn.setText("Player's Turn: " + playerList.get(playerNum));
 
         /* To restrict Space Bar in Keyboard */
@@ -103,11 +111,21 @@ public class MainActivity extends AppCompatActivity {
                         if (word.length() > 0)
                         {
                             words.add(word.toString()); //Add the word to the array list
+
+
                             playerNum++;  //Go to the next player
                             String oldHis = wordHistory.getText().toString();
                             wordHistory.setText(oldHis + " " + word);
+                            totalWords--;
+                            wordsLeft.setText("Words Left: " + totalWords);
+                            gameLength.incrementProgressBy(1);
+
+
+
+
 
                             if (playerNum < playerList.size()) {playerTurn.setText("Player's Turn: " + playerList.get(playerNum));}
+
                             else {
                                 playerNum = 0;
                                 playerTurn.setText("Player's Turn: " + playerList.get(playerNum));
