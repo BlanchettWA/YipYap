@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     int roundCount = 1;
+    int totalWords;
     int playerNum = 0;
     String player;
     ArrayList<String> words = new ArrayList<>();
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         roundCount = extras.getIntExtra("NumTurns",5);
         final ArrayList<String> playerList = extras.getStringArrayListExtra("PlayerList");
+        totalWords = (roundCount*(playerList.size()));
         final String gameTopic = extras.getStringExtra("Topic");
 
         topic.setText("Topic: " + gameTopic);
