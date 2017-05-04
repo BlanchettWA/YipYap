@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
                 else
                 {
-                    Intent toResult = new Intent(MainActivity.this, saveStory.class);
+                    Intent toResult = new Intent(MainActivity.this, saveActivity.class);
                     toResult.putExtra("NumRounds", roundCount);
                     toResult.putExtra("PlayerList",playerList);
                     toResult.putExtra("Topic", gameTopic);
