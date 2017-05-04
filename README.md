@@ -7,4 +7,5 @@ YipYap is a pass-to-play word game. After setting up the game, each player will 
 
 Created in Android Studio for [Keith Brigg's](https://github.com/kabriggs991) CSCI 490 Android App Development class. 
 
-Final Written Report in Google Docs (https://docs.google.com/a/g.cofc.edu/document/d/1Lr6Jw947QXUgGD8jGskTmyjVdjYeWsYQhSMo0elPojE/edit?usp=sharing)
+[Final Written Report in Google Docs](https://docs.google.com/a/g.cofc.edu/document/d/1Lr6Jw947QXUgGD8jGskTmyjVdjYeWsYQhSMo0elPojE/edit?usp=sharing)
+[Usage Video Demo](https://www.dropbox.com/s/awy1jsmxegy4r3v/app%20demo.mp4?dl=0)
