@@ -39,17 +39,10 @@
 
         <activity
             android:screenOrientation="portrait"
-            android:name=".rankingActivity"
-            android:label="rankingActivity"
+            android:name=".saveStory"
+            android:label="savingActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-
-        <activity
-            android:screenOrientation="portrait"
-            android:name=".finalScreen"
-            android:windowSoftInputMode="adjustResize"
-            android:label="FinalScreen"
-            android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait"

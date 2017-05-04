@@ -4,19 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.Spanned;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.Toast;
-import android.text.TextWatcher;
 import android.content.Intent;
 import android.view.KeyEvent;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.InputType;
+
 import java.util.ArrayList;
 
 
@@ -121,9 +117,6 @@ public class MainActivity extends AppCompatActivity {
                             gameLength.incrementProgressBy(1);
 
 
-
-
-
                             if (playerNum < playerList.size()) {playerTurn.setText("Player's Turn: " + playerList.get(playerNum));}
 
                             else {
@@ -158,13 +151,13 @@ public class MainActivity extends AppCompatActivity {
 
                 else
                 {
-                Intent toResult = new Intent(MainActivity.this, rankingActivity.class);
-                toResult.putExtra("NumRounds", roundCount);
-                toResult.putExtra("PlayerList",playerList);
-                toResult.putExtra("Topic", gameTopic);
-                toResult.putExtra("WordStory",words);
-                MainActivity.this.startActivity(toResult);
-            }
+                    Intent toResult = new Intent(MainActivity.this, saveStory.class);
+                    toResult.putExtra("NumRounds", roundCount);
+                    toResult.putExtra("PlayerList",playerList);
+                    toResult.putExtra("Topic", gameTopic);
+                    toResult.putExtra("WordStory",words);
+                    MainActivity.this.startActivity(toResult);
+                }
             }
         });
 
