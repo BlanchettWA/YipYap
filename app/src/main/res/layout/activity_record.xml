@@ -15,17 +15,24 @@
         android:layout_height="wrap_content"
         android:text="@string/recordsHeader"
         android:textSize="18pt"
-        android:id="@+id/R"
+        android:id="@+id/rTitle"
         android:layout_margin="6pt"
         />
 
     <TextView
+        android:id="@+id/recordDescriptor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Placeholder because I don't really know what's going here"
-        android:layout_below="@id/R"
+        android:layout_below="@id/rTitle"
         android:layout_margin="6pt"
-        />
+        android:text="This list contains all of the saved stories! Tap one to check it out and hold on it to delete it!" />
+
+    <ListView
+        android:id="@+id/recordedStories"
+        android:layout_width="match_parent"
+        android:layout_height="450px"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/recordDescriptor" />
 
     <Button
         android:layout_width="wrap_content"
@@ -37,5 +44,20 @@
         android:layout_alignParentStart="true"
         android:id="@+id/back2"
         />
+
+    <EditText
+        android:id="@+id/showStory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/back2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/recordedStories"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:inputType="none"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:text="No story chosen yet..." />
 
 </RelativeLayout>
